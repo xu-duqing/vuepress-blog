@@ -21,6 +21,6 @@ const main = async ctx => {
 
 app.use(route.get('/', main))
 app.use(route.get('/about', about))
-app.use(assets(path.join(__dirname, 'dist')))
+app.use(assets('/code/docs/.vuepress/dist'))
 
 module.exports = app
