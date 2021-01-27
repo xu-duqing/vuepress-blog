@@ -9,5 +9,6 @@ Resources:
       Type: 'Aliyun::Serverless::Function'
       Properties:
         Handler: index.handler
+        Initializer: index.initializer
         Runtime: nodejs8
         CodeUri: './'

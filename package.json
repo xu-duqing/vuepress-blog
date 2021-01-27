@@ -9,6 +9,12 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@webserverless/fc-express": "^0.1.4",
+    "koa": "^2.13.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0"
+  },
   "devDependencies": {
     "@vuepress/theme-blog": "^2.3.3",
     "vuepress": "^1.8.0"

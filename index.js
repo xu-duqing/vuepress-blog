@@ -6,7 +6,23 @@ module.exports.initializer = function(context, callback) {
 };
 */
 
+'use strict';
+const { Server } = require('@webserverless/fc-express')
+const app = require('./src')
+let server
+
+module.exports.initializer = function(context, cb) {
+  if (!server) { 
+    console.info('start init server');
+    server = new Server(app.callback(), () => {
+      console.info('finish init');
+      cb(null, 'finish init'); 
+    })
+  
+    server.startServer() 
+  }
+};
+
 module.exports.handler = function(event, context, callback) { 
-  console.log('hello world');
-  callback(null, 'hello world'); 
+  server.proxy(event, context, callback);
 };
